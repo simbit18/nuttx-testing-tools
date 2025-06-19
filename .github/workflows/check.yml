@@ -45,15 +45,15 @@ jobs:
           python3 -m venv .venv
           source .venv/bin/activate
           pip install codespell cmake-format black isort flake8
-          # cd nuttx-testing-tools/nuttx
-          cd nuttx-testing-tools
+          cd nuttx-testing-tools/nuttx
+          # cd nuttx-testing-tools
           pwd
           dir $GITHUB_WORKSPACE
           # commits="${{ github.event.pull_request.base.sha }}..HEAD"
           # git log --oneline $commits
           commits="HEAD~...HEAD"
           git log --oneline $commits
-          echo "nuttx-testing-tools/nuttx/tools/checkpatch.sh -c -u -m -g $commits"
-          nuttx-testing-tools/nuttx/tools/checkpatch.sh -c -u -m -g $commits
+          echo "../nuttx/tools/checkpatch.sh -c -u -m -g $commits"
+          ../nuttx/tools/checkpatch.sh -c -u -m -g $commits
           #echo "../nuttx/tools/checkpatch.sh -c -g HEAD~...HEAD"
           #../nuttx/tools/checkpatch.sh -c -g HEAD~...HEAD
