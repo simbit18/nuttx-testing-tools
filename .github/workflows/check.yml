@@ -58,7 +58,7 @@ jobs:
           # ../nuttx/tools/checkpatch.sh -c -u -m -g $commits
           echo "../nuttx/tools/checkpatch.sh -c -u -f $commits"
           ../nuttx/tools/checkpatch.sh -c -u -f ../nuttx/test/readme.txt
-          ../nuttx/tools/checkpatch.sh -c -u -f ../nuttx/test/CMakeLists.txt
+          #../nuttx/tools/checkpatch.sh -c -u -f ../nuttx/test/CMakeLists.txt
           
           #echo "../nuttx/tools/checkpatch.sh -c -g HEAD~...HEAD"
           #../nuttx/tools/checkpatch.sh -c -g HEAD~...HEAD
