@@ -211,11 +211,23 @@ check_file() {
   fi
 
   if [ $encoding != 0 ]; then
-    md5="$(md5sum $@)"
-    cvt2utf convert --nobak "$@" &> /dev/null
-    if [ "$md5" != "$(md5sum $@)" ]; then
-      echo "$@: error: Non-UTF8 characters detected!"
+    if ! command -v cvt2utf &> /dev/null; then
+      if [ $cvt2utf_warning_once == 0 ]; then
+        echo -e "\ncvt2utf not found, run following command to install:"
+        echo "  $ pip install cvt2utf"
+        cvt2utf_warning_once=1
+      fi
       fail=1
+    else
+      md5="$(md5sum $@)"
+      cvt2utf convert --nobak "$@" &> /dev/null
+      if [ "$md5" != "$(md5sum $@)" ]; then
+        if [ $cvt2utf_warning_once == 0 ]; then
+            echo "$@: error: Non-UTF8 characters detected!"
+            cvt2utf_warning_once=1
+        fi
+        fail=1
+      fi
     fi
   fi
 }
