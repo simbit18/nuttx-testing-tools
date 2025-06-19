@@ -46,6 +46,7 @@ jobs:
           source .venv/bin/activate
           pip install codespell cmake-format black isort flake8
           # cd nuttx-testing-tools/nuttx
+          cd nuttx-testing-tools
           pwd
           dir $GITHUB_WORKSPACE
           # commits="${{ github.event.pull_request.base.sha }}..HEAD"
