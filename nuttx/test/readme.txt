@@ -1,1 +1,1 @@
-spell checck with codespell (install with: pip install codespell
+spell checck with codespell (install witth: pip install codespell
