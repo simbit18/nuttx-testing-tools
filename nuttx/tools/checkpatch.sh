@@ -218,6 +218,7 @@ check_file() {
       fail=1
     fi
   fi
+}
 
 check_ranges() {
   while read; do
