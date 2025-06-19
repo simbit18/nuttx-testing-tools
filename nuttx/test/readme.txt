@@ -1,3 +1,3 @@
-spell check with codespell (install with: pip install codespelll
+spell check with codespell (instaaall with: pip install codespell
 
 0xF6
