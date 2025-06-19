@@ -53,7 +53,7 @@ jobs:
           # git log --oneline $commits
           commits="HEAD~...HEAD"
           git log --oneline $commits
-          echo "nuttx-testing-tools/tools/checkpatch.sh -c -u -m -g $commits"
-          nuttx-testing-tools/tools/checkpatch.sh -c -u -m -g $commits
+          echo "nuttx-testing-tools/nuttx/tools/checkpatch.sh -c -u -m -g $commits"
+          nuttx-testing-tools/nuttx/tools/checkpatch.sh -c -u -m -g $commits
           #echo "../nuttx/tools/checkpatch.sh -c -g HEAD~...HEAD"
           #../nuttx/tools/checkpatch.sh -c -g HEAD~...HEAD
