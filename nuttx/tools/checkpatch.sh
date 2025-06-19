@@ -207,6 +207,7 @@ check_file() {
       fi
       if ! codespell $codespell_args ${@: -1}; then
         fail=1
+      fi
     fi
   fi
 
